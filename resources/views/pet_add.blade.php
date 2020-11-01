@@ -719,7 +719,7 @@
                 });
                 window.app.dropdownLoad('.my_dropdown.vet', {
                     api: {
-                        url: "/pet/route?getVets=true",
+                        url: "/pet/route?getVetsDropdown=true",
                         paramData: 'data',
                         data:{
                             type:'dropdown'

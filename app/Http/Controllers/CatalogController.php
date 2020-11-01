@@ -6,8 +6,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Lib_district;
 use App\Models\Lib_organization;
-use App\Models\Lib_size;
-use App\Models\Lib_subordination;
 use App\Models\Pet_inspection;
 use App\Models\Pet_state;
 use App\Models\Pet_vaccination;
@@ -193,29 +191,5 @@ class CatalogController extends Controller
         return response()->json($result);
     }
 
-
-    public function Save(Request $request, $name)
-    {
-        $input = $request->all();
-        $data['status'] = false;
-        $tbl = "lib_" . $name . "s";
-        try {
-            $id = $input['id'];
-            unset($input['id']);
-            if ($id > 0) {
-                $input['updated_at'] = date('Y-m-d H:i:s');
-                DB::table($tbl)->where('id', $id)->update($input);
-            } else {
-                $input['created_at'] = date('Y-m-d H:i:s');
-                $id = DB::table($tbl)->insertGetId($input);
-            }
-            $data['status'] = true;
-            $data['id'] = $id;
-            $data['message'] = 'Данные успешно сохранены!';
-        } catch (\Exception $e) {
-            $data['errors'][] = ["message" => "Error:" . $e->getMessage()];
-        }
-        return response()->json($data, isset($data['errors']) ? 400 : 200);
-    }
 
 }

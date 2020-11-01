@@ -127,6 +127,8 @@ class PetController extends Controller
             $data['data']=Pet_state::all();
         }elseif(isset($input['getVets']) && ($input['getVets'])==true) {
             $data['data']=Lib_vet::all();
+        }elseif(isset($input['getVetsDropdown']) && ($input['getVetsDropdown'])==true) {
+            $data['data']=Lib_vet::all(['id as value','vet_name as name']);
         }elseif(isset($input['getEartypes']) && ($input['getEartypes'])==true) {
             if(isset($input['type']) && ($input['type'])=='dropdown'){
                 $data['data'] = Lib_eartype::all(['id as value','eartype_name as name']);
