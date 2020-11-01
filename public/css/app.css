@@ -1,0 +1,18 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+
+.blue:not(.button) {
+  color: #2589DE !important;
+}
+
+#main-body-content {
+  padding: 10px;
+}
+
+table.dataTable tbody > tr.selected,
+table.dataTable tbody > tr > .selected {
+  background-color: #b0c9d9 !important;
+}
+.ui.search.category>.results {
+  left:40%;
+}
+

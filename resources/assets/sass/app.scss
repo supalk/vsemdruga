@@ -1,0 +1,26 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+
+.blue:not(.button) {
+  color:#2589DE !important;
+}
+.ui.shape .sides .side.no_padding{
+  padding:0!important;
+  min-width: 800px;
+  min-height: 450px;
+}
+
+
+#main-body-content{
+  padding: 10px;
+}
+
+
+table.dataTable tbody > tr.selected, table.dataTable tbody > tr > .selected {
+  background-color: #b0c9d9 !important;
+}
